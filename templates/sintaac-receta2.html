@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/imagenes/gluten-free.ico">
+
+    <title>GLUTEN FREE</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- font awasome -->
+    <script src="https://kit.fontawesome.com/d419a23d09.js" crossorigin="anonymous"></script>
+    
+    <!-- link a css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <nav class="nav">
+
+                <!-- logo -->
+                <div class="logo-pagina-inicio" id="logo-pagina-inicio">
+                    <a href="/index.html">
+                        <i class="logo-inicio fa-solid fa-cake-candles fa-bounce" ></i>
+                        <span class="inicio-texto"><b>popCACkes</b></span>
+                    </a>
+                </div>
+
+                <input type="checkbox" id="menu-check">
+                <label id="menu" for="menu-check">
+                    <span id="menu-abrir">&#9776;</span>
+                    <span id="menu-cerrar">X</span>
+                </label>
+
+                <!-- hipervínculos del menú -->
+                <ul class="nav-links">
+                    <li class="nav-links-texto">
+                        <a href="/index.html#team-dulce">TEAM DULCE</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a href="/templates/sintaac.html">GLUTEN FREE</a>
+                    </li>
+                    <li class="nav-links-texto">
+                        <a href="/templates/CRUD.html">CRUD</a>
+                    </li>
+
+
+                    <li class="nav-links-texto">
+                        <a class="boton-login" href="/templates/formulario.html">
+                            <i class="logo-boton-login fa-solid fa-right-to-bracket fa-beat"></i>
+                            <span class="login-texto"> REGISTRARSE</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- foto producto -->
+        <section id="banner-producto">
+            <!-- division para el detalle de la receta -->
+            <div>
+                <div>
+                    <!-- titulo receta -->
+                    <div class="titulo-torta">
+                        <h2 class="oregano-regular">CARROT CAKE <img class="img-gluten" src="/static/imagenes/gluten-free.ico" alt="">
+                        </h2>
+                    </div>
+
+                    <!-- foto torta -->
+                    <div class="contenedor-foto-torta">
+                        <img class="foto-torta" src="/static/imagenes/carrot-cake.jpg" alt="Carrotcake" width="400">
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- receta del producto -->
+        <div id="info-receta">
+            <div>
+                <!-- tabla con duracion y dificultad -->
+                <div class="tabla-receta">
+                    <table>
+                        <tr>
+                            <td><strong>Dificultad: </strong></td>
+                            <td>Media</td>
+                        </tr>
+
+                        <tr>
+                            <td><strong>Duración: </strong></td>
+                            <td>70 minutos</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <!-- ingredientes -->
+                <div class="ingredientes">
+                        <p><strong>PARA EL BIZCOCHUELO</strong></p>
+                        <ul>
+                            <li>230 g de azúcar.</li>
+                            <li>300 g de mix de harina sin gluten.</li>
+                            <li>100 g de harinas de sorgo.</li>
+                            <li>1 cdita de canela.</li>
+                            <li>15 g de polvo leudante.</li>
+                            <li>4 g de goma xántica si es un mix casero.</li>
+                            <li>3 g de bicarbonato.</li>
+                            <li>1/2 cdita de sal.</li>
+                            <li>Ralladura de 1/2 Limón y de 1/2 naranja.</li>
+                            <li>130 g de aceite.</li>
+                            <li>200 g de leche o agua.</li>
+                            <li>3 huevos.</li>
+                            <li>1 zanahoria grande rallada.</li>
+                            <li> 1/2 manzana rallada.</li>
+                            <li>50 g de nueces.</li>
+                        </ul>
+
+                        <p><strong>PARA EL FROSTING</strong></p>
+                        <ul>
+                            <li>Queso crema 400 g.</li>
+                            <li>Azúcar impalpable 3 cdas.</li>
+                            <li>Ralladura de naranja 1 unid.</li>
+                        </ul>
+                </div>
+
+            </div>
+
+            <!-- pasos -->
+            <div class="procedimiento">
+                <p><strong>PROCEDIMIENTO:</strong>
+                    <ol>
+                        <li>Rallar la zanahoria y la manzana con la piel y reservar (con un rallador buen finito).</li>
+                        <li>Colocar todos los secos en un bowl y mezclar.</li>
+                        <li>En otro bowl incorporar los líquidos, colocar los secos sin dejar de batir.</li>
+                        <li>Incorporar la manzana y la zanahoria rallada y por último las nueces.</li>
+                        <li>Colocar en un molde enmantecado y cocinar durante 40/ 50 minutos.</li>
+                        <li>Para el frosting, batir el queso crema con el azúcar impalpable y perfumar con la ralladura de
+                            naranja.</li>
+                        <li>Cubrir la torta con el frosting y decorar con unos chips de zanahoria y nueces tostadas.</li>
+                    </ol>
+
+            </div>
+        </div>
+
+        <div class="boton-volver">
+            <a href="./sintaac.html">
+                <span class="texto-volver"> VOLVER</span></a>
+        </div>
+
+
+
+    </main>
+
+
+
+    <footer id="footer">
+        <a href="#">Términos y condiciones</a>
+        <a href="#">Preguntas frecuentes</a>
+        <a href="#">Ayuda</a>
+
+        <div class="redes-sociales">
+            <a href="https://www.whatsapp.com/" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-beat-fade"></i>
+
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram fa-beat"></i>
+
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-square-facebook fa-beat"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- link a javascript -->
+    <script src="/static/javascript/formulario.js"></script>
+
+
+</body>
+
+</html>

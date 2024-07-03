@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/imagenes/icono.ico">
+
+    <title>LISTADO DE RECETAS</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- font awasome -->
+    <script src="https://kit.fontawesome.com/d419a23d09.js" crossorigin="anonymous"></script>
+
+    <!-- link a css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+
+
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <nav class="nav">
+
+                <!-- logo -->
+                <div class="logo-pagina-inicio" id="logo-pagina-inicio">
+                    <a href="/index.html">
+                        <i class="logo-inicio fa-solid fa-cake-candles fa-bounce"></i>
+                        <span class="inicio-texto"><b>popCACkes</b></span>
+                    </a>
+
+                </div>
+
+                <input type="checkbox" id="menu-check">
+                <label id="menu" for="menu-check">
+                    <span id="menu-abrir">&#9776;</span>
+                    <span id="menu-cerrar">X</span>
+                </label>
+
+                <!-- hipervínculos del menú -->
+                <ul class="nav-links">
+                    <li class="nav-links-texto">
+                        <a href="#team-dulce">TEAM DULCE</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a href="/templates/sintaac.html">GLUTEN FREE</a>
+                    </li>
+                    
+                    <li class="nav-links-texto">
+                        <a href="/templates/CRUD.html">CRUD</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a class="boton-login" href="/templates/formulario.html">
+                            <i class="logo-boton-login fa-solid fa-right-to-bracket fa-beat"></i>
+                            <span class="login-texto"> REGISTRARSE</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <main class="main-formulario2">
+
+    </div>
+    <h1 class="titulo-crud">LISTADO DE RECETAS</h1><br>
+
+    <table> <!-- Se crea una tabla para mostrar las recetas. -->
+        <thead> <!--Encabezado.-->
+            <tr>
+                <th>CÓDIGO</th>
+                <th>TÍTULO</th>
+                <th>DURACIÓN</th>
+                <th>DIFICULTAD</th>                
+                <th>INGREDIENTES</th>
+                <th>PROCEDIMIENTO</th>
+                <th>IMAGEN</th>
+                
+            </tr>
+        </thead>
+        <tbody id="tablaRecetas"> </tbody>
+    </table><br>
+
+
+
+    <div class="formulario-grupo formulario-grupo-boton">
+        <a href="/templates/MODIFICAR-RECETA.html" class="formulario-boton formulario-boton2">MODIFICAR</a>
+        <a href="/templates/ELIMINAR-RECETA.html" class="formulario-boton formulario-boton2">ELIMINAR</a>
+        <a href="/templates/CRUD.html" class="formulario-boton formulario-boton2">VOLVER AL CRUD</a>
+    </div>
+
+
+
+    </main>
+
+    <footer id="footer">
+        <a href="">Términos y condiciones</a>
+        <a href="">Preguntas frecuentes</a>
+        <a href="">Ayuda</a>
+
+        <div class="redes-sociales">
+            <a href="https://www.whatsapp.com/" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-beat-fade"></i>
+
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram fa-beat"></i>
+
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-square-facebook fa-beat"></i>
+            </a>
+        </div>
+    </footer>
+
+
+    <script>
+        // const URL = "http://127.0.0.1:5000/"
+
+        // Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        const URL = "https://julimalagamba.pythonanywhere.com/"
+        
+
+        // Realizamos la solicitud GET al servidor para obtener todas las recetas.
+        fetch(URL + 'recetas')
+            .then(function (response) {
+                if (response.ok) {
+                    //Si la respuesta es exitosa (response.ok), convierte el cuerpo de la respuesta de formato JSON a un objeto JavaScript y pasa estos datos a la siguiente promesa then.
+                    return response.json(); 
+            } else {
+                    // Si hubo un error, lanzar explícitamente una excepción para ser "catcheada" más adelante
+                    throw new Error('Error al obtener las recetas.');
+                }
+            })
+
+            //Esta función maneja los datos convertidos del JSON.
+            .then(function (data) {
+                let tablaRecetas = document.getElementById('tablaRecetas'); //Selecciona el elemento del DOM donde se mostrarán las recetas.
+
+                // Iteramos sobre cada producto y agregamos filas a la tabla
+                for (let receta of data) {
+                    let fila = document.createElement('tr'); //Crea una nueva fila de tabla (<tr>) para cada receta.
+                    fila.innerHTML = '<td>' + receta.codigo + '</td>' +
+                        '<td>' + receta.titulo + '</td>' +
+                        '<td>' + receta.duracion + '</td>' +
+                        '<td>' + receta.dificultad + '</td>' +
+                        '<td>' + receta.ingredientes + '</td>' +
+                        '<td>' + receta.procedimiento + '</td>' +
+                        // Mostrar miniatura de la imagen
+                        // '<td><img class="imagen-chiquita" src=/static/imagenes/' + receta.imagen_url +' alt="Imagen de la receta" style="width: 100px;"></td>';
+                        
+                        //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+                        '<td><img class="imagen-chiquita" src=https://www.pythonanywhere.com/user/julimalagamba/files/home/julimalagamba/mysite/static/imagenes/' + receta.imagen_url +' alt="Imagen de la receta" style="width: 100px;"></td>' + '<td align="right">' + receta.proveedor + '</td>';
+                    
+                    //Una vez que se crea la fila con el contenido del producto, se agrega a la tabla utilizando el método appendChild del elemento tablaProductos.
+                    tablaRecetas.appendChild(fila);
+                }
+            })
+
+            //Captura y maneja errores, mostrando una alerta en caso de error al obtener las recetas.
+            .catch(function (error) {
+                // Código para manejar errores
+                alert('Error al obtener las recetas.');
+            });
+    </script>
+
+
+
+</body>

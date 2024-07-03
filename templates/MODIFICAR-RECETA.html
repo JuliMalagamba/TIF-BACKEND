@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/imagenes/icono.ico">
+
+    <title>MODIFICAR RECETA</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- font awasome -->
+    <script src="https://kit.fontawesome.com/d419a23d09.js" crossorigin="anonymous"></script>
+
+    <!-- link a css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+
+
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <nav class="nav">
+
+                <!-- logo -->
+                <div class="logo-pagina-inicio" id="logo-pagina-inicio">
+                    <a href="/index.html">
+                        <i class="logo-inicio fa-solid fa-cake-candles fa-bounce"></i>
+                        <span class="inicio-texto"><b>popCACkes</b></span>
+                    </a>
+
+                </div>
+
+                <input type="checkbox" id="menu-check">
+                <label id="menu" for="menu-check">
+                    <span id="menu-abrir">&#9776;</span>
+                    <span id="menu-cerrar">X</span>
+                </label>
+
+                <!-- hipervínculos del menú -->
+                <ul class="nav-links">
+                    <li class="nav-links-texto">
+                        <a href="#team-dulce">TEAM DULCE</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a href="/templates/sintaac.html">GLUTEN FREE</a>
+                    </li>
+                    
+                    <li class="nav-links-texto">
+                        <a href="/templates/CRUD.html">CRUD</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a class="boton-login" href="/templates/formulario.html">
+                            <i class="logo-boton-login fa-solid fa-right-to-bracket fa-beat"></i>
+                            <span class="login-texto"> REGISTRARSE</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <main class="main-formulario">
+
+    </div>
+    <h1 class="titulo-crud">MODIFICAR RECETA</h1>
+
+
+
+    <!-- Contenedor principal que será controlado por JavaScript. Este contenedor tendrá dos formularios. -->
+    <div id="app">
+        <!-- Primer formulario: Selector de producto. LLama a la función obtenerReceta cuando se envíe el formulario -->
+        <form id="form-obtener-receta" class="formulario" >
+
+            <div class="formulario-grupo" >
+                <label for="codigo" class="formulario-label" >CÓDIGO DE RECETA A MODIFICAR:</label>
+                <div class="formulario-grupo-input">
+                    <input type="text" id="codigo" class="formulario-input" required><br>
+                </div>
+            </div>
+
+            <div class="formulario-grupo formulario-grupo-boton">
+                <button type="submit" class="formulario-boton formulario-boton2" >CONSULTAR RECETA</button> 
+                <a href="/templates/CRUD.html" class="formulario-boton formulario-boton2">VOLVER AL CRUD</a>
+            </div>
+            
+            
+            
+        
+        </form>
+
+        <!-- Segundo formulario: se muestra solo si mostrarDatosReceta es verdadero. Llama a la función guardarCambios -->
+        <div id="datos-receta" style="display: none;">
+            <h2 class="titulo-crud">DATOS DE LA RECETA</h2>
+            <form id="form-guardar-cambios" class="formulario" >
+
+                <!-- titulo -->
+                <div class="formulario-grupo" id="grupo-titulo-receta">
+                    <label for="tituloModificar" class="formulario-label" >TÍTULO:</label>
+                    <div class="formulario-grupo-input">
+                        <input type="text" id="tituloModificar" class="formulario-input" required><br>
+                    </div>
+                </div>
+
+                <!-- Duración -->
+                <div class="formulario-grupo" id="grupo-duracion">
+                    <label for="duracionModificar" class="formulario-label" >DURACIÓN:</label>
+                    <div class="formulario-grupo-input">
+                        <input type="text" id="duracionModificar" class="formulario-input" required><br>
+                    </div>
+                </div>
+
+                <!-- Dificultad -->
+
+                <div class="formulario-grupo" id="grupo-dificultad">
+                    <label for="dificultadModificar" class="formulario-label" >NIVEL DE DIFICULTAD</label>
+                    <div class="formulario-grupo-input">
+                        <select class="formulario-input" id="dificultadModificar">
+                            <option value="">Seleccione el nivel de dificultad:</option>
+                            <option value="bajo">Bajo</option>
+                            <option value="medio">Medio</option>
+                            <option value="alto">Alto</option>
+                        </select>
+                    </div>
+                </div>
+
+            <!--Ingredientes -->
+            <div class="formulario-grupo" id="grupo-ingredientes">
+                <label for="ingredientesModificar" class="formulario-label" >INGREDIENTES</label>
+                <div class="formulario-grupo-input">
+                    <textarea rows="6" class="formulario-textarea" id="ingredientesModificar"  required></textarea>
+                </div>
+            </div> 
+
+            <!--Procedimiento -->
+            <div class="formulario-grupo" id="grupo-procedimiento">
+                <label for="procedimientoModificar" class="formulario-label" >PROCEDIMIENTO:</label>
+                <div class="formulario-grupo-input">
+                    <textarea rows="6" class="formulario-textarea" id="procedimientoModificar" required></textarea>
+                </div>
+            </div> 
+
+
+
+             
+                <!-- Imagen actual de la receta - Debe comentarse al subirse al servidor-->
+                <img class="imagen-chiquita" id="imagen-actual" style="max-width: 200px; display: none;">                                
+
+                <!-- Vista previa de la nueva imagen seleccionada -->
+                <img id="imagen-vista-previa" style="max-width: 200px; display: none;">
+
+                <!-- Input para nueva imagen -->
+                <div class="formulario-grupo" id="adjuntar-receta">
+                    <label for="nuevaImagen" class="formulario-label">IMAGEN DE LA RECETA:</label>
+                    <div class="formulario-grupo-input">
+                        <input type="file" class="formulario-input" id="nuevaImagen">
+                    </div>
+                    <br>
+                </div> 
+
+
+                <div class="formulario-grupo formulario-grupo-boton">
+                    <button type="submit" class="formulario-boton">MODIFICAR</button>
+                    <button type="reset" class="formulario-boton">LIMPIAR</button>
+                    <a href="/templates/CRUD.html" class="formulario-boton formulario-boton2">CRUD</a>
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+
+    </main>
+
+    <footer id="footer">
+        <a href="">Términos y condiciones</a>
+        <a href="">Preguntas frecuentes</a>
+        <a href="">Ayuda</a>
+
+        <div class="redes-sociales">
+            <a href="https://www.whatsapp.com/" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-beat-fade"></i>
+
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram fa-beat"></i>
+
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-square-facebook fa-beat"></i>
+            </a>
+        </div>
+    </footer>
+
+
+
+    <script>
+        //const URL = "http://127.0.0.1:5000/"
+
+        //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        const URL = "https://julimalagamba.pythonanywhere.com/"
+
+        // Variables de estado para controlar la visibilidad y los datos del formulario
+        let codigo = '';
+        let titulo = '';
+        let duracion = '';
+        let dificultad = '';
+        let ingredientes = '';
+        let procedimiento = '';
+        let imagen_url = '';
+        let imagenSeleccionada = null;
+        let imagenUrlTemp = null;
+        let mostrarDatosReceta = false;
+
+        document.getElementById('form-obtener-receta').addEventListener('submit', obtenerReceta);
+        document.getElementById('form-guardar-cambios').addEventListener('submit', guardarCambios);
+        document.getElementById('nuevaImagen').addEventListener('change', seleccionarImagen);
+
+        // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos de la receta correspondiente al código ingresado.
+        function obtenerReceta(event) {
+            event.preventDefault();
+            codigo = document.getElementById('codigo').value;
+            fetch(URL + 'recetas/' + codigo)
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al obtener los datos de la receta.')
+                    }
+                })
+                .then(data => {
+                    titulo = data.titulo;
+                    duracion = data.duracion;
+                    dificultad = data.dificultad;
+                    ingredientes = data.ingredientes;
+                    procedimiento = data.procedimiento;
+                    imagen_url = data.imagen_url;
+                    mostrarDatosReceta = true; //Activa la vista del segundo formulario
+                    mostrarFormulario();
+                })
+                .catch(error => {
+                    alert('Código no encontrado.');
+                });
+        }
+
+        // Muestra el formulario con los datos de la receta
+        function mostrarFormulario() {
+            if (mostrarDatosReceta) {
+                document.getElementById('tituloModificar').value = titulo;
+                document.getElementById('duracionModificar').value = duracion;
+                document.getElementById('dificultadModificar').value = dificultad;
+                document.getElementById('ingredientesModificar').value = ingredientes;
+                document.getElementById('procedimientoModificar').value = procedimiento;
+                
+
+                const imagenActual = document.getElementById('imagen-actual');
+                if (imagen_url && !imagenSeleccionada) { // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
+                    
+                    //imagenActual.src = '/static/imagenes/' + imagen_url;
+                    
+                    //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+                    imagenActual.src = 'https://www.pythonanywhere.com/user/julimalagamba/files/home/julimalagamba/mysite/static/imagenes/' + imagen_url;
+                    
+                    imagenActual.style.display = 'block'; // Muestra la imagen actual
+                } else {
+                    imagenActual.style.display = 'none'; // Oculta la imagen si no hay URL
+                }
+
+                document.getElementById('datos-receta').style.display = 'block';
+            } else {
+                document.getElementById('datos-receta').style.display = 'none';
+            }
+        }
+
+        // Se activa cuando el usuario selecciona una imagen para cargar.
+        function seleccionarImagen(event) {
+            const file = event.target.files[0];
+            imagenSeleccionada = file;
+            imagenUrlTemp = URL.createObjectURL(file); // Crea una URL temporal para la vista previa
+
+            const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+            imagenVistaPrevia.src = imagenUrlTemp;
+            imagenVistaPrevia.style.display = 'block';
+        }
+
+        // Se usa para enviar los datos modificados de la receta al servidor.
+        function guardarCambios(event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('codigo', codigo);
+            formData.append('titulo', document.getElementById('tituloModificar').value);
+            formData.append('duracion', document.getElementById('duracionModificar').value);
+            formData.append('dificultad', document.getElementById('dificultadModificar').value);
+            formData.append('ingredientes', document.getElementById('ingredientesModificar').value);
+            formData.append('procedimiento', document.getElementById('procedimientoModificar').value);
+
+            // Si se ha seleccionado una imagen nueva, la añade al formData. 
+            if (imagenSeleccionada) {
+                formData.append('imagen', imagenSeleccionada, imagenSeleccionada.name);
+            }
+
+            fetch(URL + 'recetas/' + codigo, {
+                method: 'PUT',
+                body: formData,
+            })
+                .then(response => {
+                    if (response.ok) {
+                        return response.json()
+                    } else {
+                        throw new Error('Error al guardar los cambios de la receta.')
+                    }
+                })
+                .then(data => {
+                    alert('Receta actualizada correctamente.');
+                    limpiarFormulario();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error al actualizar la receta.');
+                });
+        }
+
+        // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
+        function limpiarFormulario() {
+            document.getElementById('codigo').value = '';
+            document.getElementById('tituloModificar').value = '';
+            document.getElementById('duracionModificar').value = '';
+            document.getElementById('dificultadModificar').value = '';
+            document.getElementById('ingredientesModificar').value = '';
+            document.getElementById('procedimientoModificar').value = '';
+            document.getElementById('nuevaImagen').value = '';
+
+            const imagenActual = document.getElementById('imagen-actual');
+            imagenActual.style.display = 'none';
+
+            const imagenVistaPrevia = document.getElementById('imagen-vista-previa');
+            imagenVistaPrevia.style.display = 'none';
+
+            codigo = '';
+            titulo = '';
+            duracion = '';
+            dificultad = '';
+            ingredientes = '';
+            procedimiento = '';
+            imagen_url = '';
+            imagenSeleccionada = null;
+            imagenUrlTemp = null;
+            mostrarDatosReceta = false;
+
+            document.getElementById('datos-receta').style.display = 'none';
+        }
+    </script>
+
+
+
+
+</body>

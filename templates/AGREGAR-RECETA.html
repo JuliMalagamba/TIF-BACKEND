@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/static/imagenes/icono.ico">
+
+    <title>AGREGAR RECETA</title>
+
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oregano:ital@0;1&display=swap"
+        rel="stylesheet">
+
+    <!-- font awasome -->
+    <script src="https://kit.fontawesome.com/d419a23d09.js" crossorigin="anonymous"></script>
+
+    <!-- link a css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+
+
+<body>
+    <header class="header">
+        <div class="contenedor">
+            <nav class="nav">
+
+                <!-- logo -->
+                <div class="logo-pagina-inicio" id="logo-pagina-inicio">
+                    <a href="/index.html">
+                        <i class="logo-inicio fa-solid fa-cake-candles fa-bounce"></i>
+                        <span class="inicio-texto"><b>popCACkes</b></span>
+                    </a>
+
+                </div>
+
+                <input type="checkbox" id="menu-check">
+                <label id="menu" for="menu-check">
+                    <span id="menu-abrir">&#9776;</span>
+                    <span id="menu-cerrar">X</span>
+                </label>
+
+                <!-- hipervínculos del menú -->
+                <ul class="nav-links">
+                    <li class="nav-links-texto">
+                        <a href="#team-dulce">TEAM DULCE</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a href="/templates/sintaac.html">GLUTEN FREE</a>
+                    </li>
+                    
+                    <li class="nav-links-texto">
+                        <a href="/templates/CRUD.html">CRUD</a>
+                    </li>
+
+                    <li class="nav-links-texto">
+                        <a class="boton-login" href="/templates/formulario.html">
+                            <i class="logo-boton-login fa-solid fa-right-to-bracket fa-beat"></i>
+                            <span class="login-texto"> REGISTRARSE</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
+
+
+    <main class="main-formulario"> 
+
+        <h1 class="titulo-crud">AGREGAR RECETA</h1>
+        <form class="formulario" id="formulario" enctype="multipart/form-data" >
+
+            <!-- grupo Titulo Receta -->
+            <div class="formulario-grupo" id="grupo-titulo-receta">
+                <label for="titulo" class="formulario-label">TÍTULO DE LA RECETA</label>
+                <div class="formulario-grupo-input">
+                    <input type="text" class="formulario-input" name="titulo" id="titulo" required
+                        placeholder="Por favor, ingrese un título para la receta:">
+                </div>
+            </div> <!-- FIN grupo Titulo Receta -->
+            
+            <!-- grupo Duración -->
+            <div class="formulario-grupo" id="grupo-duracion">
+                <label for="duracion" class="formulario-label">DURACIÓN</label>
+                <div class="formulario-grupo-input">
+                    <input type="text" class="formulario-input" name="duracion" id="duracion" 
+                        placeholder="Indique el tiempo que demanda el procedimiento:">
+                </div>
+
+            <!-- grupo Dificultad -->
+            <div class="formulario-grupo" id="grupo-dificultad">
+                <label for="dificultad" class="formulario-label">NIVEL DE DIFICULTAD</label>
+                <div class="formulario-grupo-input">
+                    <select class="formulario-input" name="dificultad" id="dificultad">
+                        <option value="">Seleccione el nivel de dificultad:</option>
+                        <option value="bajo">Bajo</option>
+                        <option value="medio">Medio</option>
+                        <option value="alto">Alto</option>
+                    </select>
+                </div>
+            </div> <!-- FIN grupo Dificultad -->
+
+
+
+            </div> <!-- FIN grupo Duración -->
+
+            <!-- grupo Ingredientes -->
+            <div class="formulario-grupo" id="grupo-ingredientes">
+                <label for="ingredientes" class="formulario-label">INGREDIENTES</label>
+                <div class="formulario-grupo-input">
+                    <textarea rows="6" class="formulario-textarea" name="ingredientes" id="ingredientes" placeholder="Ingrese el detalle completo de los ingredientes:" required></textarea>
+                </div>
+            </div> <!-- FIN grupo Ingredientes -->
+
+            <!-- grupo Procedimiento -->
+            <div class="formulario-grupo" id="grupo-procedimiento">
+                <label for="procedimiento" class="formulario-label">PROCEDIMIENTO</label>
+                <div class="formulario-grupo-input">
+                    <textarea rows="6" class="formulario-textarea" name="procedimiento" id="procedimiento" placeholder="Ingrese el desarrollo completo del procedimiento:" required></textarea>
+                </div>
+            </div> <!-- FIN grupo Procedimiento -->
+
+            <!-- Adjunte imagen receta -->
+            <div class="formulario-grupo" id="adjuntar-receta">
+                <label for="imagen_url" class="formulario-label">IMAGEN DE LA RECETA</label>
+                <div class="formulario-grupo-input">
+                    <input type="file" class="formulario-input" id="imagen_url" name="imagen_url">
+                </div>
+                <br>
+            </div> <!-- FIN Adjunte imagen receta -->
+
+            <!-- grupo Boton -->
+            <div>
+                <div class="formulario-grupo formulario-grupo-boton">
+                    <button type="submit" class="formulario-boton">AGREGAR</button>
+                    <button type="reset" class="formulario-boton">LIMPIAR</button>
+                    <a href="/templates/CRUD.html" class="formulario-boton formulario-boton2">VOLVER AL CRUD</a>
+                </div>
+                <p class="formulario-mensaje-exito" id="formulario-mensaje-exito"><b>RECETA ENVIADA CON ÉXITO.</b></p>
+            </div>
+            
+        </form>
+
+    </main>
+    <footer id="footer">
+        <a href="">Términos y condiciones</a>
+        <a href="">Preguntas frecuentes</a>
+        <a href="">Ayuda</a>
+
+        <div class="redes-sociales">
+            <a href="https://www.whatsapp.com/" target="_blank">
+                <i class="fa-brands fa-whatsapp fa-beat-fade"></i>
+
+            </a>
+            <a href="https://www.instagram.com/" target="_blank">
+                <i class="fa-brands fa-instagram fa-beat"></i>
+
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank">
+                <i class="fa-brands fa-square-facebook fa-beat"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- link a javascript -->
+
+    <script>
+        // const URL = "http://127.0.0.1:5000/"
+
+        //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+        const URL = "https://julimalagamba.pythonanywhere.com/"
+        
+
+        // Capturamos el evento de envío del formulario
+        document.getElementById('formulario').addEventListener('submit', function (event) {
+            event.preventDefault(); // Evitamos que se envie el form 
+
+            var formData = new FormData(this);
+    
+            // Realizamos la solicitud POST al servidor
+            fetch(URL + 'recetas', {
+                method: 'POST',
+                body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
+            })
+
+            //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
+            .then(function (response) {
+                    if (response.ok) { 
+                        //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                        return response.json(); 
+                    } else {
+                        // Si hubo un error, lanzar explícitamente una excepción
+                        // para ser "catcheada" más adelante
+                        throw new Error('Error al agregar la receta.');
+                    }
+            })
+
+                //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+                .then(function (data) {
+                    alert('Receta agregada correctamente.');
+                })
+
+                // En caso de error, mostramos una alerta con un mensaje de error.
+                .catch(function (error) {
+                    alert('Error al agregar la receta.');
+                })
+
+                // Limpiar el formulario en ambos casos (éxito o error)
+                .finally(function () {
+                    document.getElementById('titulo').value = "";
+                    document.getElementById('duracion').value = "";
+                    document.getElementById('dificultad').value = "";
+                    document.getElementById('ingredientes').value = "";
+                    document.getElementById('procedimiento').value = "";
+                    document.getElementById('imagen_url').value = "";
+                });
+        })
+    </script>
+
+
+</body>
